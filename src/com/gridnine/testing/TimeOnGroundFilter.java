@@ -4,7 +4,7 @@ import java.time.Duration;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class ExcessiveGroundTimeFilter implements FlightFilter {
+public class TimeOnGroundFilter implements FlightFilter {
     @Override
     public List<Flight> filter(List<Flight> flights) {
         return flights.stream()

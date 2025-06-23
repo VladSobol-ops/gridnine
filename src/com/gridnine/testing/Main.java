@@ -12,15 +12,15 @@ public class Main {
         printFlights(flights);
 
         System.out.println("\nИсключаем перелёты с вылетом до текущего времени:");
-        List<Flight> filtered1 = new DepartureInPastFilter().filter(flights);
+        List<Flight> filtered1 = new FlightDepartureInFilter().filter(flights);
         printFlights(filtered1);
 
         System.out.println("\nИсключаем перелёты, где есть сегменты с прилётом раньше вылета:");
-        List<Flight> filtered2 = new ArrivalBeforeDepartureFilter().filter(filtered1);
+        List<Flight> filtered2 = new FlightArrivalDepartureFilter().filter(filtered1);
         printFlights(filtered2);
 
         System.out.println("\nИсключаем перелёты, где общее время на земле больше 2 часов:");
-        List<Flight> filtered3 = new ExcessiveGroundTimeFilter().filter(filtered2);
+        List<Flight> filtered3 = new TimeOnGroundFilter().filter(filtered2);
         printFlights(filtered3);
     }
 

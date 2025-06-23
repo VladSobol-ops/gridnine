@@ -28,8 +28,8 @@ class DepartureInPastFilterTest {
 
         List<Flight> flights = Arrays.asList(flightWithPast, flightWithFuture);
 
-        DepartureInPastFilter filter = new DepartureInPastFilter();
-        List<Flight> result = filter.filter(flights);
+        FlightDepartureInFilter filters = new FlightDepartureInFilter();
+        List<Flight> result = filters.filter(flights);
 
         assertEquals(1, result.size());
         assertTrue(result.contains(flightWithFuture));
